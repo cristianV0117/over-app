@@ -30,63 +30,41 @@ class Layout extends React.Component {
       <>
         <MDBNavbar color='indigo' dark expand='md'>
           <MDBNavbarBrand>
-            <strong className='white-text'>Navbar</strong>
+            <Link href="/">
+              <a><strong className='white-text'>Inicio</strong></a>
+            </Link>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id='navbarCollapse3' isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav left>
               <MDBNavItem>
-                <Link href='/'>
-                  <a className='nav-link'>Home</a>
-                </Link>
-              </MDBNavItem>
-              <MDBNavItem>
-                <Link href='/register'>
-                  <a className='nav-link'>Register</a>
-                </Link>
-              </MDBNavItem>
-              <MDBNavItem>
                 <MDBDropdown>
                   <MDBDropdownToggle nav caret>
-                    <span className='mr-2'>Dropdown</span>
+                    <span className='mr-2'>Usuario</span>
                   </MDBDropdownToggle>
                   <MDBDropdownMenu>
                     <MDBDropdownItem>
-                      <Link href='/'>
-                        <a>Home</a>
+                      <Link href='/login'>
+                        <a>Ingresar</a>
                       </Link>
                     </MDBDropdownItem>
                     <MDBDropdownItem>
                       <Link href='/register'>
-                        <a>Register</a>
-                      </Link>
-                    </MDBDropdownItem>
-                    <MDBDropdownItem>
-                      <Link href='/'>
-                        <a>Home</a>
-                      </Link>
-                    </MDBDropdownItem>
-                    <MDBDropdownItem>
-                      <Link href='/register'>
-                        <a>Register</a>
+                        <a>Registrarme</a>
                       </Link>
                     </MDBDropdownItem>
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavItem>
-            </MDBNavbarNav>
-            <MDBNavbarNav right>
               <MDBNavItem>
-                <MDBFormInline waves>
-                  <div className='md-form my-0'>
-                    <input
-                      className='form-control mr-sm-2'
-                      type='text'
-                      placeholder='Search'
-                      aria-label='Search'
-                    />
-                  </div>
-                </MDBFormInline>
+                <Link href='/'>
+                  <a className='nav-link'>Repositorio</a>
+                </Link>
+              </MDBNavItem>
+              <MDBNavItem>
+                <Link href='/'>
+                  <a className='nav-link'>API</a>
+                </Link>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>

@@ -11,6 +11,10 @@
   "repository": "https://github.com/JakubChm/nextjs-mdbreact.git",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "express": "^4.17.1",
     "mdbreact": "^4.25.5",
     "next": "^9.3.4",

@@ -14,6 +14,7 @@ function Layout(props) {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          background: #f5f8fa!important;
         }
       `}</style>
     </>
