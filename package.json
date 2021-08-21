@@ -2,6 +2,9 @@
   "name": "nextjs-mdb",
   "version": "4.25.3",
   "description": "Integration example for MDBReact and Next.js create-next-app",
+  "engines": {
+    "node": "14.17.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
