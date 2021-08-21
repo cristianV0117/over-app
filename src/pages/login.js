@@ -21,6 +21,10 @@ const login = () => {
 		event.target.className += " was-validated"
 		fetch('https://back-over-api.herokuapp.com/api/v1/login', {
 			method: "POST",
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			}
 			body: JSON.stringify({
 				user,
 				password
