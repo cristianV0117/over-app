@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Request from '../core/request'
 import loginImage from '../assets/login.jpg'
-import { toast, ToastContainer } from 'react-nextjs-toast'
+import { toast } from 'react-nextjs-toast'
+import Router from 'next/router'
 import {
   MDBBtn,
   MDBCard,
@@ -23,10 +24,15 @@ const LoginForm = ({props}) => {
 		event.target.className += " was-validated"
 		Request("login", {"user_name": user, "password": password}, "POST", [props.API, props.DOMAIN_API]).then(response => {
 			if (!response.error) {
+				
 				toast.notify(`Bienvenido ${response.message.email}`, {
 					title: "¡OK!",
 					type: "success"
 				})
+				setTimeout(() => {
+					localStorage.setItem('s', true)
+					Router.push('dashboard')
+				}, 2000)
 			} else {
 				toast.notify(response.message, {
 					title: "¡OH NO!",
@@ -38,7 +44,7 @@ const LoginForm = ({props}) => {
 
 	return (
 		<>
-			<ToastContainer align={"right"} position={"bottom"} />
+			
 			<MDBAnimation  type="fadeInLeft">
 				<div className="container col-md-6">
 					<MDBCard>

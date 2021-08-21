@@ -5,3 +5,7 @@
 .black-items {
 	color: black;
 }
+
+.notify {
+	z-index:99999;
+}
