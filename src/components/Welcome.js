@@ -24,7 +24,7 @@ const Welcome = () => {
 			    					Bienvenido a <strong>¡OVER APP!</strong>
 			    				</h1>
 			    				<hr />
-			    				<div className="text-justify">
+			    				<div className="text-justify pl-2">
 			    					Esta es una pequeña aplicación hecho por mí
 			    					para fortalecer mi portafolio y ser de apoyo
 			    					y soporte en mi experiencia tanto profesional
