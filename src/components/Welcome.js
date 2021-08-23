@@ -9,7 +9,7 @@ const Welcome = () => {
 	return (
 		<div className="container col-md-12">
 	    	<MDBAnimation type="fadeInLeft">
-	    		<MDBCard>
+	    		<MDBCard className="shadow-lg">
 			    	<div className="row">
 			    		<div className="col-md-6">
 			    			<img

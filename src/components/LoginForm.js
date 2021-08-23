@@ -42,47 +42,49 @@ const LoginForm = ({props}) => {
 	}
 
 	return (
-		<>
-			
-			<MDBAnimation  type="fadeInLeft">
-				<div className="container col-md-6">
-					<MDBCard>
-						<div className="container col-md-7 mt-2">
-							<MDBCardImage
-								className='img-fluid'
-					            src={loginImage}
-					            waves
-							/>
-							<hr />
-						</div>
-						<MDBCardBody className="default">
-							<p className='text-center h5'>Login</p>
-							<form className='needs-validation' onSubmit={submitHandler}>
-								<MDBInput
-				                  label='Tu email o nombre de usuario'
-				                  icon='user'
-				                  type='text'
-				                  onChange={e => setUser(e.target.value)}
-				                  required
-				                  name="user_name"
-				                />
-				                <MDBInput
-				                  label='Contraseña'
-				                  icon='lock'
-				                  type='password'
-				                  onChange={e => setPassword(e.target.value)}
-				                  required
-				                  name="password"
-				                />
-				                <div className="text-center">
-									<MDBBtn type="submit" outline color='indigo'>Ingresar</MDBBtn>
+	
+			<div className="container col-md-12">
+				<MDBAnimation  type="fadeInLeft">
+					<MDBCard className="shadow-lg">
+						<div className="row">
+							<div className="col-md-6">
+								<MDBCardImage
+									className='img-fluid'
+									src={loginImage}
+									waves
+								/>
+							</div>
+							<div className="col-md-6 mt-5 default">
+								<div className="col-md-10 mt-5 mr-4">
+									<p className='text-center h5'>Login</p>
+									<form className='needs-validation mt-2' onSubmit={submitHandler}>
+										<MDBInput
+											label='Tu email o nombre de usuario'
+											icon='user'
+											type='text'
+											onChange={e => setUser(e.target.value)}
+											required
+											name="user_name"
+										/>
+										<MDBInput
+											label='Contraseña'
+											icon='lock'
+											type='password'
+											onChange={e => setPassword(e.target.value)}
+											required
+											name="password"
+										/>
+										<div className="text-center mt-2">
+											<MDBBtn type="submit" outline color='indigo'>Ingresar</MDBBtn>
+										</div>
+									</form>
 								</div>
-							</form>
-						</MDBCardBody>
+							</div>
+						</div>
 					</MDBCard>
-				</div>
-			</MDBAnimation>
-		</>
+				</MDBAnimation>
+			</div>
+		
 	)
 }
 
