@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Request from '../core/request'
+import Session from '../core/session'
 import loginImage from '../assets/login.jpg'
 import { toast } from 'react-nextjs-toast'
 import Router from 'next/router'
@@ -9,8 +10,6 @@ import {
   MDBCardBody,
   MDBCardImage,
   MDBInput,
-  MDBCol,
-  MDBRow,
   MDBAnimation
 } from 'mdbreact';
 

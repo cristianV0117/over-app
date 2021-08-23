@@ -1,3 +1,4 @@
+import control from '../core/control'
 import {
   MDBBtn,
   MDBCard,
@@ -68,4 +69,4 @@ const Example = () => (
   </React.Fragment>
 );
 
-export default Example;
+export default control(Example);

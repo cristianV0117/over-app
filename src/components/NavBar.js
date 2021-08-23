@@ -57,12 +57,12 @@ class Layout extends React.Component {
                 </MDBDropdown>
               </MDBNavItem>
               <MDBNavItem>
-                <Link href='/'>
+                <Link href='https://github.com/cristianV0117/over-app'>
                   <a className='nav-link'>Repositorio</a>
                 </Link>
               </MDBNavItem>
               <MDBNavItem>
-                <Link href='/'>
+                <Link href='https://back-over-api.herokuapp.com/'>
                   <a className='nav-link'>API</a>
                 </Link>
               </MDBNavItem>
