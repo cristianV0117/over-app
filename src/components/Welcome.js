@@ -36,7 +36,7 @@ const Welcome = () => {
 			    					consultar en su respectivo repositorio que voy dejar a continuación.
 			    					<h2 className="mt-3">
 			    						<FontAwesomeIcon className="black-items" icon={faGithub} />
-			    						<Link href='https://github.com/cristianV0117/over'>
+			    						<Link href='https://github.com/cristianV0117/over-app'>
 				    						<a>
 				    							<MDBBtn outline color="indigo" >
 				    								Repositorio		    							

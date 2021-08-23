@@ -1,6 +1,7 @@
 import LoginForm from '../components/LoginForm'
+import control from '../core/control'
 
-const login = (props) => {
+const login = ({props}) => {
 	return (
 		<>
 			<LoginForm props={props} />
@@ -9,11 +10,4 @@ const login = (props) => {
 	
 }
 
-export default login
-
-login.getInitialProps = async ctx => {
-	return {
-		API: process.env.API,
-		DOMAIN_API: process.env.DOMAIN_API
-	}
-}
+export default control(login)
