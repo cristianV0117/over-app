@@ -9,3 +9,6 @@
 .notify {
 	z-index:99999;
 }
+.panel-white {
+	background: white;
+}
