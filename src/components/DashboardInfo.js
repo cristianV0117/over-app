@@ -10,7 +10,7 @@ import {
 }
 from 'mdbreact';
 
-class ModalPage extends Component {
+class UserInfo extends Component {
 state = {
   modal3: true
 }
@@ -56,4 +56,4 @@ render() {
   }
 }
 
-export default ModalPage;
+export default UserInfo;
