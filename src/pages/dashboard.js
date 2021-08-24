@@ -1,12 +1,12 @@
 import auth from '../core/auth'
-import UserInfo from '../components/UserInfo'
+import DashboardInfo from '../components/DashboardInfo'
 import SideBar from '../components/SideBar'
 
 
 const dashboard = () => {
 	return (
 		<>
-			<UserInfo />
+			<DashboardInfo />
 			<h1>HOLA MUNDO AUTH</h1>
 			
 		</>
