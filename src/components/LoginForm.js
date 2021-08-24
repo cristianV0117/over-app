@@ -7,7 +7,6 @@ import Router from 'next/router'
 import {
   MDBBtn,
   MDBCard,
-  MDBCardBody,
   MDBCardImage,
   MDBInput,
   MDBAnimation
@@ -23,7 +22,6 @@ const LoginForm = ({props}) => {
 		event.target.className += " was-validated"
 		Request("login", {"user_name": user, "password": password}, "POST", [props.API, props.DOMAIN_API]).then(response => {
 			if (!response.error) {
-				
 				toast.notify(`Bienvenido ${response.message.email}`, {
 					title: "¡OK!",
 					type: "success"
@@ -34,7 +32,7 @@ const LoginForm = ({props}) => {
 				}, 2000)
 			} else {
 				toast.notify(response.message, {
-					title: "¡OH NO!",
+					title: "¡ OH NO :( !",
 					type: "error"
 				})
 			}
@@ -42,7 +40,6 @@ const LoginForm = ({props}) => {
 	}
 
 	return (
-	
 			<div className="container col-md-12">
 				<MDBAnimation  type="fadeInLeft">
 					<MDBCard className="shadow-lg">
@@ -56,7 +53,7 @@ const LoginForm = ({props}) => {
 							</div>
 							<div className="col-md-6 mt-5 default">
 								<div className="col-md-10 mt-5 mr-4">
-									<p className='text-center h5'>Login</p>
+									<p className='text-center h5'>Ingresa &#x1F642;</p>
 									<form className='needs-validation mt-2' onSubmit={submitHandler}>
 										<MDBInput
 											label='Tu email o nombre de usuario'

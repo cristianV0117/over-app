@@ -1,5 +1,5 @@
 import auth from '../core/auth'
-import UserInfo from '../components/userInfo'
+import UserInfo from '../components/UserInfo'
 import SideBar from '../components/SideBar'
 
 
