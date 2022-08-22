@@ -20,14 +20,15 @@ const LoginForm = ({props}) => {
 	const submitHandler = event => {
 		event.preventDefault()
 		event.target.className += " was-validated"
-		Request("login", {"user_name": user, "password": password}, "POST", [props.API, props.DOMAIN_API]).then(response => {
-			if (!response.error) {
+		Request("login", {"user_name": user, "email": user, "password": password}, "POST", [props.API, props.DOMAIN_API]).then(response => {
+			if (!response.error && 200 === response.status) {
 				toast.notify(`Bienvenido ${response.message.email}`, {
 					title: "¡OK!",
 					type: "success"
 				})
 				setTimeout(() => {
 					localStorage.setItem('s', true)
+					localStorage.setItem('token', response.message.jwt)
 					Router.push('dashboard')
 				}, 2000)
 			} else {

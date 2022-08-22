@@ -1,32 +1,29 @@
-<div align="center">
-<img src='https://github.com/JakubChm/nextjs-mdbreact/blob/master/src/assets/mdb-react-small.png?raw=true'  alt='mdbreact' align='center'>
-<br/>
-<h1>MDB React & Next.js 9.3</h1>
-<h2>MDBReact with create-next-app integration example.</h2>
-<h2>MDBReact v.4.25.5</h2>
+# OVER APP :sparkling_heart:
 
-</div>
+Bienvenidos a over.
 
-## Project setup
+Una pequeña plataforma para realizar tus tareas diarias.
 
-```
-yarn install
-```
+## OBJETIVO
+Esta aplicacion tiene como objetivo ser soporte y ayuda en mi experiencia como desarrollador,
+dando a conocer un poco de mi flujo de trabajo y el como me desenvuelvo al momento de desarrollar una aplicacion.
 
-### Compiles and hot-reloads for development
+## EN EL DESARROLLO SE HA UTILIZADO
+* Next JS
+* MDBoostrap
+* NPM
 
-```
-yarn dev
-```
+## HERRAMIENTAS UTILIZADAS PARA EL DESARROLLO
+* Visual Studio Code
+* Git
+* GitHub
+* Heroku
 
-### Compiles and minifies for production
+## PRODUCCION - https://front-over-app.herokuapp.com/
 
-```
-yarn build
-```
+## SOPORTE:
+![Over.](https://github.com/cristianV0117/docs/blob/main/over1.PNG)
+![Over.](https://github.com/cristianV0117/docs/blob/main/over3.PNG)
+![Over.](https://github.com/cristianV0117/docs/blob/main/over2.PNG)
 
-### Lints and hot-reloads for production
-
-```
-yarn start
-```
+## DERECHOS - Cristian Camilo Vasquez - 2021 :smile:
