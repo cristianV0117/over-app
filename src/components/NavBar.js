@@ -106,6 +106,16 @@ class Layout extends React.Component {
                     :
                     null
               }
+              {
+                this.state.sessionStatus ?
+                    <MDBNavItem>
+                      <Link href='/game'>
+                        <a className='nav-link'>Juego de ahorcados</a>
+                      </Link>
+                    </MDBNavItem>
+                    :
+                    null
+              }
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
