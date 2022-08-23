@@ -17,8 +17,15 @@ class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      sessionStatus: false
     };
+  }
+
+  componentDidMount() {
+    if (null !== localStorage.getItem('s')) {
+      this.setState({sessionStatus: true})
+    }
   }
 
   toggleCollapse = () => {
@@ -56,16 +63,36 @@ class Layout extends React.Component {
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavItem>
-              <MDBNavItem>
-                <Link href='https://github.com/cristianV0117/over-app'>
-                  <a className='nav-link'>Repositorio</a>
-                </Link>
-              </MDBNavItem>
-              <MDBNavItem>
-                <Link href='https://back-over-api.herokuapp.com/'>
-                  <a className='nav-link'>API</a>
-                </Link>
-              </MDBNavItem>
+              {
+                !this.state.sessionStatus ?
+                    <MDBNavItem>
+                      <Link href='https://github.com/cristianV0117/over-app'>
+                        <a className='nav-link'>Repositorio</a>
+                      </Link>
+                    </MDBNavItem>
+                    :
+                    null
+              }
+              {
+                !this.state.sessionStatus ?
+                    <MDBNavItem>
+                      <Link href='https://back-over-api.herokuapp.com/'>
+                        <a className='nav-link'>API</a>
+                      </Link>
+                    </MDBNavItem>
+                    :
+                    null
+              }
+              {
+                this.state.sessionStatus ?
+                    <MDBNavItem>
+                      <Link href='#'>
+                        <a className='nav-link'>Cerrar sesion</a>
+                      </Link>
+                    </MDBNavItem>
+                    :
+                    null
+              }
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>

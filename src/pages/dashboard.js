@@ -1,16 +1,21 @@
 import auth from '../core/auth'
 import DashboardInfo from '../components/DashboardInfo'
-import {MDBBtn, MDBLink} from "mdbreact";
-import SideBar from '../components/SideBar'
-
+import {MDBBtn} from "mdbreact";
+import Link from "next/link";
+import session from "../core/session";
 
 const dashboard = () => {
+
+	session();
+
 	return (
 		<>
 			<DashboardInfo />
-			<MDBBtn outline href='/users'>
-				Usuarios
-			</MDBBtn>
+			<Link href='/users'>
+				<MDBBtn outline>
+					Usuarios
+				</MDBBtn>
+			</Link>
 			<h1>HOLA MUNDO AUTH</h1>
 		</>
 	)

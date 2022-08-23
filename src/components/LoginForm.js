@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Request from '../core/request'
-import Session from '../core/session'
 import loginImage from '../assets/login.jpg'
 import { toast } from 'react-nextjs-toast'
 import Router from 'next/router'
@@ -30,6 +29,7 @@ const LoginForm = ({props}) => {
 					localStorage.setItem('s', true)
 					localStorage.setItem('token', response.message.jwt)
 					Router.push('dashboard')
+					location.reload()
 				}, 2000)
 			} else {
 				toast.notify(response.message, {
