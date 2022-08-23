@@ -6,24 +6,46 @@ import {
   MDBNavItem,
   MDBNavbarToggler,
   MDBCollapse,
-  MDBFormInline,
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
   MDBDropdownItem
 } from 'mdbreact';
+import Router from "next/router";
+import {toast} from "react-nextjs-toast";
 
 class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      sessionStatus: false
     };
+  }
+
+  componentDidMount() {
+    if (null !== localStorage.getItem('s')) {
+      this.setState({sessionStatus: true})
+    }
   }
 
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
+
+  logOut = () => {
+    localStorage.removeItem('s')
+    localStorage.removeItem('token')
+    toast.notify(`¡Adios! ${String.fromCodePoint(0x1F600)}`, {
+      title: "¡OK!",
+      type: "success"
+    })
+    setTimeout(() => {
+      Router.push('/')
+      location.reload()
+    }, 1000)
+
+  }
 
   render() {
     return (
@@ -56,16 +78,34 @@ class Layout extends React.Component {
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavItem>
-              <MDBNavItem>
-                <Link href='https://github.com/cristianV0117/over-app'>
-                  <a className='nav-link'>Repositorio</a>
-                </Link>
-              </MDBNavItem>
-              <MDBNavItem>
-                <Link href='https://back-over-api.herokuapp.com/'>
-                  <a className='nav-link'>API</a>
-                </Link>
-              </MDBNavItem>
+              {
+                !this.state.sessionStatus ?
+                    <MDBNavItem>
+                      <Link href='https://github.com/cristianV0117/over-app'>
+                        <a className='nav-link'>Repositorio</a>
+                      </Link>
+                    </MDBNavItem>
+                    :
+                    null
+              }
+              {
+                !this.state.sessionStatus ?
+                    <MDBNavItem>
+                      <Link href='https://back-over-api.herokuapp.com/'>
+                        <a className='nav-link'>API</a>
+                      </Link>
+                    </MDBNavItem>
+                    :
+                    null
+              }
+              {
+                this.state.sessionStatus ?
+                    <MDBNavItem>
+                      <a onClick={this.logOut} className='nav-link'>Cerrar sesion</a>
+                    </MDBNavItem>
+                    :
+                    null
+              }
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>

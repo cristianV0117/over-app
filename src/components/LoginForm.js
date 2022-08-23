@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Request from '../core/request'
-import Session from '../core/session'
 import loginImage from '../assets/login.jpg'
 import { toast } from 'react-nextjs-toast'
 import Router from 'next/router'
@@ -22,7 +21,7 @@ const LoginForm = ({props}) => {
 		event.target.className += " was-validated"
 		Request("login", {"user_name": user, "email": user, "password": password}, "POST", [props.API, props.DOMAIN_API]).then(response => {
 			if (!response.error && 200 === response.status) {
-				toast.notify(`Bienvenido ${response.message.email}`, {
+				toast.notify(`Bienvenido ${response.message.user_name}`, {
 					title: "¡OK!",
 					type: "success"
 				})
@@ -30,6 +29,7 @@ const LoginForm = ({props}) => {
 					localStorage.setItem('s', true)
 					localStorage.setItem('token', response.message.jwt)
 					Router.push('dashboard')
+					location.reload()
 				}, 2000)
 			} else {
 				toast.notify(response.message, {
