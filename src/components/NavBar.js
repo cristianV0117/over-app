@@ -6,12 +6,13 @@ import {
   MDBNavItem,
   MDBNavbarToggler,
   MDBCollapse,
-  MDBFormInline,
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
   MDBDropdownItem
 } from 'mdbreact';
+import Router from "next/router";
+import {toast} from "react-nextjs-toast";
 
 class Layout extends React.Component {
   constructor(props) {
@@ -31,6 +32,20 @@ class Layout extends React.Component {
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
+
+  logOut = () => {
+    localStorage.removeItem('s')
+    localStorage.removeItem('token')
+    toast.notify(`¡Adios! ${String.fromCodePoint(0x1F600)}`, {
+      title: "¡OK!",
+      type: "success"
+    })
+    setTimeout(() => {
+      Router.push('/')
+      location.reload()
+    }, 1000)
+
+  }
 
   render() {
     return (
@@ -86,9 +101,7 @@ class Layout extends React.Component {
               {
                 this.state.sessionStatus ?
                     <MDBNavItem>
-                      <Link href='#'>
-                        <a className='nav-link'>Cerrar sesion</a>
-                      </Link>
+                      <a onClick={this.logOut} className='nav-link'>Cerrar sesion</a>
                     </MDBNavItem>
                     :
                     null

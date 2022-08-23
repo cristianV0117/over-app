@@ -21,7 +21,7 @@ const LoginForm = ({props}) => {
 		event.target.className += " was-validated"
 		Request("login", {"user_name": user, "email": user, "password": password}, "POST", [props.API, props.DOMAIN_API]).then(response => {
 			if (!response.error && 200 === response.status) {
-				toast.notify(`Bienvenido ${response.message.email}`, {
+				toast.notify(`Bienvenido ${response.message.user_name}`, {
 					title: "¡OK!",
 					type: "success"
 				})

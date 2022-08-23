@@ -48,7 +48,7 @@ const Welcome = () => {
 			    					<strong>¿Quieres saber mas sobre mí?</strong><br/>aquí está mi perfil de LinkedIn y mi Portafolio. ¡Nos vemos pronto! &#x1F642;
 			    					<h2 className="mt-2">
 			    						<FontAwesomeIcon className="black-items" icon={faLinkedin} />
-			    						<Link href='/'>
+			    						<Link href='https://www.linkedin.com/in/cristian-camilo-vasquez-osorio-1b791b1a3'>
 				    						<a>
 				    							<MDBBtn outline color="indigo" >
 				    								LinkedIn			    							
