@@ -10,6 +10,7 @@ import {
   MDBInput,
   MDBAnimation
 } from 'mdbreact';
+import Link from "next/link";
 
 const LoginForm = ({props}) => {
 
@@ -74,6 +75,9 @@ const LoginForm = ({props}) => {
 										/>
 										<div className="text-center mt-2">
 											<MDBBtn type="submit" outline color='indigo'>Ingresar</MDBBtn>
+											<Link href="/forgot-password">
+												<MDBBtn outline color='warning'>Olvidé mi contraseña</MDBBtn>
+											</Link>
 										</div>
 									</form>
 								</div>

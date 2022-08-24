@@ -109,7 +109,7 @@ class Layout extends React.Component {
               {
                 this.state.sessionStatus ?
                     <MDBNavItem>
-                      <Link href='/game'>
+                      <Link href='/game/hanged'>
                         <a className='nav-link'>Juego de ahorcados</a>
                       </Link>
                     </MDBNavItem>
