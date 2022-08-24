@@ -8,7 +8,7 @@ const resetPassword = () => {
     return <ResetPassword props={{
         API: process.env.API,
         DOMAIN_API: process.env.DOMAIN_API,
-        EMAIL: atob(param)
+        EMAIL: Buffer.from(param, 'base64').toString()
     }} />
 }
 
