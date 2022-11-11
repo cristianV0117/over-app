@@ -29,6 +29,11 @@ const LoginForm = ({props}) => {
 				setTimeout(() => {
 					localStorage.setItem('s', true)
 					localStorage.setItem('token', response.message.jwt)
+					localStorage.setItem('id', response.message.id)
+					localStorage.setItem('user_name', response.message.user_name)
+					localStorage.setItem('email', response.message.email)
+					localStorage.setItem('rol_id', response.message.roles.id)
+					localStorage.setItem('rol', response.message.roles.name)
 					Router.push('dashboard')
 					location.reload()
 				}, 2000)
