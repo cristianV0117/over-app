@@ -34,8 +34,7 @@ class Layout extends React.Component {
   };
 
   logOut = () => {
-    localStorage.removeItem('s')
-    localStorage.removeItem('token')
+    localStorage.clear()
     toast.notify(`¡Adios! ${String.fromCodePoint(0x1F600)}`, {
       title: "¡OK!",
       type: "success"
@@ -59,25 +58,30 @@ class Layout extends React.Component {
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id='navbarCollapse3' isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav left>
-              <MDBNavItem>
-                <MDBDropdown>
-                  <MDBDropdownToggle nav caret>
-                    <span className='mr-2'>Usuario</span>
-                  </MDBDropdownToggle>
-                  <MDBDropdownMenu>
-                    <MDBDropdownItem>
-                      <Link href='/login'>
-                        <a>Ingresar</a>
-                      </Link>
-                    </MDBDropdownItem>
-                    <MDBDropdownItem>
-                      <Link href='/register'>
-                        <a>Registrarme</a>
-                      </Link>
-                    </MDBDropdownItem>
-                  </MDBDropdownMenu>
-                </MDBDropdown>
-              </MDBNavItem>
+              {
+                !this.state.sessionStatus ?
+                  <MDBNavItem>
+                    <MDBDropdown>
+                      <MDBDropdownToggle nav caret>
+                        <span className='mr-2'>Usuario</span>
+                      </MDBDropdownToggle>
+                      <MDBDropdownMenu>
+                        <MDBDropdownItem>
+                          <Link href='/login'>
+                            <a>Ingresar</a>
+                          </Link>
+                        </MDBDropdownItem>
+                        <MDBDropdownItem>
+                          <Link href='/register'>
+                            <a>Registrarme</a>
+                          </Link>
+                        </MDBDropdownItem>
+                      </MDBDropdownMenu>
+                    </MDBDropdown>
+                  </MDBNavItem>
+                    :
+                    null
+              }
               {
                 !this.state.sessionStatus ?
                     <MDBNavItem>
@@ -93,6 +97,16 @@ class Layout extends React.Component {
                     <MDBNavItem>
                       <Link href='https://back-over-api.herokuapp.com/'>
                         <a className='nav-link'>API</a>
+                      </Link>
+                    </MDBNavItem>
+                    :
+                    null
+              }
+              {
+                this.state.sessionStatus ?
+                    <MDBNavItem>
+                      <Link href='/profile'>
+                        <a className='nav-link'>Perfil</a>
                       </Link>
                     </MDBNavItem>
                     :
