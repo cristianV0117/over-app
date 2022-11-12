@@ -28,12 +28,14 @@ const request = (endPoint, data, type, auth) => {
 	}
 
 	if (type === 'PUT') {
+		console.log(auth)
 		return fetch(auth[1] + endPoint, {
 			method: type,
 			headers: {
 				'Authorization': auth[0],
 				'Accept': 'application/json',
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Authentication': auth[2]
 			},
 			body: JSON.stringify(data)
 		}).then(json => {
